@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             // if it does then we can leave it
             // else reset it back to the placeholder value
             if(dayTimeInput != dayTimePlaceHolder){
-                timeOfDayInput.setText(dayTimeInput) // this is an EditText element
+                timeOfDayInput.setText(dayTimePlaceHolder) // this is an EditText element
             }
         }
     }
@@ -88,9 +88,13 @@ class MainActivity : AppCompatActivity() {
 
     // function to dislay a hint string if the timeOfDay input is null/empty
     fun GetTimeOfDaySuggestion(): String{
-        var suggestion = "Someone's hungry, please enter the time of day for your meal prep" +
-                "Time of day to enter:" +
-                "$timesOfDay"
+        val suggestion = "Someone's hungry, please enter the time of day for your meal prep\n" +
+                "Time of day to enter:\n" +
+                "${timesOfDay[0]}\n" +
+                "${timesOfDay[1]}\n" +
+                "${timesOfDay[2]}\n" +
+                "${timesOfDay[3]}\n" +
+                "${timesOfDay[4]}"
         return suggestion
     }
 
@@ -101,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         // checking to see if our timeOfDay matches any of the timesOfDay we can allow
         for(timeOfDay in timesOfDay){
             // if it matches the times we allow then we can say it's valid
-            if(dayTimeEntered == timeOfDay.lowercase() ){
+            if(timeEnteredLowerCase == timeOfDay.lowercase() ){
                 return true;
             }
         }
@@ -129,7 +133,7 @@ class MainActivity : AppCompatActivity() {
             mealSuggestion = "Chicken Wrap"
         }else if(lowerCaseDayTime == "mid-afternoon"){
             mealSuggestion = "Peanut Butter on toast with banana"
-        } else if(lowerCaseDayTime == "Dinner"){
+        } else if(lowerCaseDayTime == "dinner"){
             mealSuggestion = "Curry and Naan Bread"
         }
 
