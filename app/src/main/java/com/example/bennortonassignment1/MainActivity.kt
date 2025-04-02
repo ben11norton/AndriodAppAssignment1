@@ -57,11 +57,33 @@ class MainActivity : AppCompatActivity() {
 
         // reset button clicking functionality:
         resetButton.setOnClickListener{
+            // in here we need to get the text values from both the dayTimeinput field and the mealSuggestionDisplay field
+            var mealSuggestion = mealSuggestionDisplay.text.toString()
+            var mealSuggestionPlaceHolder = "Chef yes Chef"
 
+            var dayTimeInput = timeOfDayInput.text.toString()
+            var dayTimePlaceHolder = "Enter the time of Day"
+
+            // check to see if the mealSuggestion text = "Chef yes Chef" (placeholder value)
+            // if it does then leave it
+            // else reset it back to "Chef yes Chef"
+            if(mealSuggestion != mealSuggestionPlaceHolder){
+                // reset mealSuggestionDisplay.text to placeholder
+                mealSuggestionDisplay.setText(mealSuggestionPlaceHolder) // this is a TextView element
+            }
+
+            // check to see if the dayTimeInput is also placeholder value
+            // if it does then we can leave it
+            // else reset it back to the placeholder value
+            if(dayTimeInput != dayTimePlaceHolder){
+                timeOfDayInput.setText(dayTimeInput) // this is an EditText element
+            }
         }
     }
 
     // functions and variables to use for the logic to keep things neat :) (delcared globally)
+    // I have delcared them in the order that they are used in the onCreate function above
+
     var timesOfDay = arrayOf("Morning", "Mid-morning", "Afternoon", "Mid-Afternoon", "Dinner")
 
     // function to dislay a hint string if the timeOfDay input is null/empty
