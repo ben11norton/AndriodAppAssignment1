@@ -1,0 +1,1 @@
+In this video, I walk you through Assignment 1, which is the meal prep app I've developed. I explain the core functions, including how the app processes user input for meal suggestions based on the time of day. I also demonstrate the app's functionality, including error handling for invalid inputs. Please make sure to review the code and provide any feedback you might have.
