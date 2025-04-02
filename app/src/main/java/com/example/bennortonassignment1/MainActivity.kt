@@ -20,26 +20,22 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // delcare the UI elements
-        val tvResult: TextView = findViewById(R.id.tvResult)
-        val button: Button = findViewById(R.id.myButton)
-        val editTextBox: EditText = findViewById(R.id.editTextBox)
+        // delcaring my layout variables:
+        val timeOfDayInput: EditText = findViewById(R.id.dayTimeInput)
+        val enterTimeOfDayButton: Button = findViewById(R.id.enterDayTime)
+        val mealSuggestionDisplay: TextView = findViewById(R.id.mealSuggestion)
+        val resetButton: Button = findViewById(R.id.resetButton)
+
+
+
 
         // adding an event listener kotlin style
         // normally would be button.addEventLister("onclick" function (){})
         // but here we do :
-        button.setOnClickListener{
-            val userName = editTextBox.text
-            var textToDisplay = ""
 
-            if(userName.isNotEmpty()){
-                // if the string is not null or empty then we display their name
-                textToDisplay = "Hello there ${userName}, this is your computer speaking"
-            } else{
-                textToDisplay = "Please enter your name in the text box, kind regards computer"
-            }
+        // reset button clicking functionality:
+        resetButton.setOnClickListener{
 
-            tvResult.text = textToDisplay
         }
     }
 }
